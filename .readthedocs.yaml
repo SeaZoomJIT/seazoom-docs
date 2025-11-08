@@ -1,41 +1,13 @@
-# ReadTheDocs Configuration
-# https://docs.readthedocs.io/en/stable/config-file/v2/
-
 version: 2
 
-# Build configuration
 build:
   os: ubuntu-22.04
   tools:
     python: "3.11"
-  jobs:
-    pre_build:
-      - pip install sphinx sphinx-rtd-theme myst-parser
 
-# Sphinx configuration
 sphinx:
   configuration: docs/conf.py
-  fail_on_warning: false
 
-# Python configuration
 python:
-  version: "3.11"
   install:
     - requirements: requirements.txt
-    - method: pip
-      path: .
-
-# Documentation source
-formats:
-  - pdf
-  - epub
-
-# Redirects (optional)
-redirects:
-  old-page: new-page
-
-# Build notifications
-notifications:
-  slack:
-    enabled: false
-
